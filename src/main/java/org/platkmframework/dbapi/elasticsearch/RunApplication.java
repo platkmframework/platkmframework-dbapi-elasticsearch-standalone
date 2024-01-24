@@ -8,13 +8,13 @@ public class RunApplication {
 	public static void main(String[] args) {
 		
 		ProjectContent.instance().projectName("DBApiNosqlElasticSearch").
-								  server("<server>").// example localhhost
+								  server("<server>").// example localhost
 								  servletPath("/platkmframework").
 		                          port("<port>").//example 8080
-		                          corsOrigin("<urls>").// example http://localhost
+		                          //corsOrigin("<urls>").// example http://localhost
 		                          corsMethod("GET,POST,PUT,DELETE,OPTIONS").
 		                          corsHeader("Origin,Authorization,Content-Type,X-Auth-Token").
-		                          //stopKey("<token>"). Optinal token sent to stop server
+		                          //stopKey("<token>"). optional token sent to stop server
 		                          dateFormat("dd-MM-yyyy").
 		                          datetimeFormat("dd-MM-yyyy:HH:mm:ss").
 		                          timeFormat("HH:mm").
