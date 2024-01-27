@@ -1,5 +1,10 @@
 # platkmframework-dbapi-elasticsearch-standalone
 
+DbApi es un middleware de persistencia para base de datos relacionales y no relaciones.
+
+Le permite realizar operaciones sobre registros de la base de datos, por lo que no necesita realizar programación adicional.
+
+
 APIs
 Crear un documento
 -------------------------------------------------------------------------------------------------------------
