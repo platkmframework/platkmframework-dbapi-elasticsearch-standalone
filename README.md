@@ -1,6 +1,42 @@
 # platkmframework-dbapi-elasticsearch-standalone
-DbApi es un middleware de persistencia para base de datos relacionales y no relaciones.
 
-Puede realizar operaciones sobre los registros de la base de datos relacionales y no relaciones, sin la necesidad de realizar de programar.
+APIs
+Crear un documento
+POST: http://server:port/platkmframework/dbapi/create?index=<index name>
 
-DbApi es un microservicio creado con la plataforma platkm. Se ejecuta como un standalone y permite que se creen las operaciones a las base de datos por medio de llamadas APIs.
+donde:
+server: servidor del middleware.
+port:puerto del middleware.
+<index name>: nombre de la colección de documentos.
+
+body: json con la información del documento a insertar.
+-------------------------------------------------------------------------------------------------------------
+Buscar un documento
+GET: http://server:port/platkmframework/dbapi/load?index=<index name>&value=<id>
+
+donde:
+server: servidor del middleware.
+port:puerto del middleware.
+<index name>: nombre de la colección de documentos.
+<id>: identificador del documento.
+
+---------------------------------------------------------------------------------------------------------
+Actualizar un documento
+PUT: http://server:port/platkmframework/dbapi/update?index=<index name>&value=<id>
+
+donde:
+server: servidor del middleware.
+port:puerto del middleware.
+<index name>: nombre de la colección de documentos.
+<id>: identificador del documento.
+
+body: json con la información del documento a actualizar.
+-----------------------------------------------------------------------------------------------------------
+Eliminar un documento
+DELETE: http://server:port/platkmframework/dbapi/load?index=<index name>&value=<id>
+
+donde:
+server:servidor del middleware.
+port:puerto del middleware.
+<index name>: nombre de la colección de documentos.
+<id>: identificador del documento.
