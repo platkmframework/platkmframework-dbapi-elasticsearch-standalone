@@ -8,9 +8,9 @@ public class RunApplication {
 	public static void main(String[] args) {
 		
 		ProjectContent.instance().projectName("DBApiNosqlElasticSearch").
-								  server("<server>").// example localhost
+								  server(System.getenv("PLATKM_ELASTICSEARCH_SERVER_NAME")).// example localhost
 								  servletPath("/platkmframework").
-		                          port("<port>").//example 8080
+		                          port(System.getenv("PLATKM_ELASTICSEARCH_SERVER_PORT")).//example 8080
 		                          //corsOrigin("<urls>").// example http://localhost
 		                          corsMethod("GET,POST,PUT,DELETE,OPTIONS").
 		                          corsHeader("Origin,Authorization,Content-Type,X-Auth-Token").
@@ -19,10 +19,10 @@ public class RunApplication {
 		                          datetimeFormat("dd-MM-yyyy:HH:mm:ss").
 		                          timeFormat("HH:mm").
 		                          //elasticsearch connection
-		                          addProperty("elasticsearch.server.name", "<servername>"). // example localhost
-		                          addProperty("elasticsearch.server.port", "<port>"). // example 9200
-		                          addProperty("elasticsearch.server.user", "<username").// elasticsearch elastic name
-		                          addProperty("elasticsearch.server.password", "<passowrd>"); //elasticsearch user password
+		                          addProperty("elasticsearch.server.name", System.getenv("PLATKM_ELASTICSEARCH_DB_SERVER_NAME")).
+		                          addProperty("elasticsearch.server.port", System.getenv("PLATKM_ELASTICSEARCH_DB_SERVER_PORT")).
+		                          addProperty("elasticsearch.server.user", System.getenv("PLATKM_ELASTICSEARCH_DB_SERVER_USER")).
+		                          addProperty("elasticsearch.server.password", System.getenv("PLATKM_ELASTICSEARCH_DB_SERVER_PASSWORD"));
 		
 		PlatkmFrameworkApplication.start(args);
 	}
